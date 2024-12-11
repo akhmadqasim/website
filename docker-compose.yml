@@ -1,0 +1,14 @@
+services:
+  website:
+    restart: always
+    container_name: aqas
+    
+    environment:
+      - TZ=Asia/Makassar
+    build:
+      context: .
+    ports:
+      - "80:80"
+    volumes:
+      - .:/app
+    command: gunicorn website.wsgi:application --bind 0.0.0.0:80 --workers 2

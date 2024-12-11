@@ -1,0 +1,28 @@
+{% load static %}
+<nav class="mil-main-menu" id="swupMenu">
+    <ul>
+        <li class="mil-has-children">
+            <a href="{% url 'home' %}">Home </a>
+        </li>
+        <li class="mil-has-children">
+            <a href="{% url 'about' %}">About</a>
+        </li>
+        <li class="mil-has-children">
+            <a href="{% url 'blogs' %}">Blog</a>
+        </li>
+        <li class="mil-has-children">
+            <a href="{% url 'contact' %}">Contact</a>
+        </li>
+        <li class="mil-has-children">
+            {% if user.is_authenticated %}
+                <a href="{% url 'dashboard' %}" class="mil-light-soft">Dashboard</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="mil-light-soft">Login</a>
+            {% endif %}
+        </li>
+    </ul>
+</nav>
+
+{% block js %}
+    <script src="{% static 'home/js/custom.js' %}"></script>
+{% endblock %}

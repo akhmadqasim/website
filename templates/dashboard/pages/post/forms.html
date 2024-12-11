@@ -1,0 +1,79 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+    <div id="content_layout">
+        <div class="grid xl:grid-cols-2 grid-cols-1 gap-6">
+            <div class="card">
+                <div class="card-body flex flex-col p-6">
+                    <header class="flex mb-5 items-center border-b border-slate-100 dark:border-slate-700 pb-5 -mx-6 px-6">
+                        <div class="flex-1">
+                            <div class="card-title text-slate-900 dark:text-white">{{ title }}</div>
+                        </div>
+                    </header>
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="card-text h-full space-y-4">
+                            {% csrf_token %}
+                            <div class="input-area">
+                                <label for="id_title" class="form-label">Post Title</label>
+                                {{ form.title }}
+                            </div>
+                            <div class="input-area">
+                                <label for="category" class="form-label">Category</label>
+                                {{ form.category }}
+                            </div>
+                            <div class="input-area">
+                                <label for="id_content" class="form-label">Content</label>
+                                {{ form.content }}
+                            </div>
+                            <div class="input-area">
+                                <label for="id_thumbnail" class="form-label">Thumbnail</label>
+                                <div class="filegroup">
+                                    <label>
+                                        {{ form.thumbnail }}
+                                        <span class="w-full h-[40px] file-control flex items-center custom-class">
+                                    <span class="flex-1 overflow-hidden text-ellipsis whitespace-nowrap">
+                                    {% if user_info.profile_picture %}
+                                        <span class="text-slate-400">{{ user_info.profile_picture }}</span>
+                                    {% else %}
+                                        <span class="text-slate-400">Choose a file or drop it here...</span>
+                                    {% endif %}
+                                    </span>
+                                    <span class="file-name flex-none cursor-pointer border-l px-4 border-slate-200 dark:border-slate-700 h-full inline-flex items-center bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 text-sm rounded-tr rounded-br font-normal">Browse</span>
+                                    </span>
+                                    </label>
+                                </div>
+                            </div>
+                            {% if post.thumbnail %}
+                                <div class="input-area">
+                                    <label for="id_thumbnail" class="form-label"></label>
+                                    <img src="{{ post.thumbnail.url }}" alt="{{ user.username }}"
+                                         class="w-32 h-32">
+                                </div>
+                            {% endif %}
+                            <button class="btn inline-flex justify-center btn-dark dark:bg-slate-700 dark:text-slate-300 mt-3"
+                                    style="float: right">
+                                Save
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let fileInput = document.querySelector('input[type="file"]');
+            let fileLabel = document.querySelector('.file-control span');
+
+            fileInput.addEventListener('change', function () {
+                if (fileInput.files.length > 0) {
+                    fileLabel.textContent = fileInput.files[0].name;
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript" src="{% static 'dashboard/third-party/ckeditor/ckeditor-init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'dashboard/third-party/ckeditor/ckeditor/ckeditor.js' %}"></script>
+{% endblock %}

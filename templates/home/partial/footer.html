@@ -1,0 +1,100 @@
+{% load static %}
+<footer class="mil-dark-bg">
+    <div class="mi-invert-fix">
+        <div class="container mil-p-120-60">
+            <div class="row justify-content-between">
+                <div class="col-md-4 col-lg-4 mil-mb-60">
+
+                    <div class="mil-muted mil-logo mil-up mil-mb-30">Akhmad Qasim.</div>
+                    <p class="mil-light-soft mil-up mil-mb-30">Subscribe our newsletter:</p>
+                    <form class="mil-subscribe-form mil-up">
+                        <label for="newsletter"></label>
+                        <input id="newsletter" type="text" placeholder="Enter your email">
+                        <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
+                    </form>
+
+                </div>
+                <div class="col-md-7 col-lg-6">
+                    <div class="row justify-content-end">
+                        <div class="col-md-6 col-lg-7">
+                            <nav class="mil-footer-menu mil-mb-60">
+                                <ul>
+                                    <li class="mil-up">
+                                        <a href="{% url 'home' %}">Home</a>
+                                    </li>
+                                    <li class="mil-up">
+                                        <a href="{% url 'about' %}">About</a>
+                                    </li>
+                                    <li class="mil-up">
+                                        <a href="{% url 'contact' %}">Contact</a>
+                                    </li>
+                                    <li class="mil-up">
+                                        <a href="{% url 'blogs' %}">Blog</a>
+                                    </li>
+                                    <li class="mil-up">
+                                        {% if user.is_authenticated %}
+                                            <a href="{% url 'dashboard' %}" class="mil-light-soft">Dashboard</a>
+                                        {% else %}
+                                            <a href="{% url 'login' %}" class="mil-light-soft">Login</a>
+                                        {% endif %}
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-md-6 col-lg-5">
+
+                            <ul class="mil-menu-list">
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-between flex-sm-row-reverse">
+                <div class="col-md-7 col-lg-6">
+
+                    <div class="row justify-content-between">
+
+                        <div class="col-md-6 col-lg-5 mil-mb-60">
+
+                            <h6 class="mil-muted mil-up mil-mb-30">Indonesia</h6>
+
+                            <p class="mil-light-soft mil-up">Jl. Batu Besaung Samarinda City, East Borneo <span
+                                    class="mil-no-wrap">+62 813 4708 5447</span></p>
+
+                        </div>
+                        <div class="col-md-6 col-lg-5 mil-mb-60">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4 col-lg-6 mil-mb-60">
+
+                    <div class="mil-vert-between">
+                        <div class="mil-mb-30">
+                            <ul class="mil-social-icons mil-up">
+                                <li><a href="https://github.com/akhmadqasim" target="_blank" class="social-icon"> <i
+                                        class="fab fa-github"></i></a>
+                                </li>
+                                <li><a href="https://www.instagram.com/akhmad_qasim/" target="_blank"
+                                       class="social-icon"> <i class="fab fa-instagram"></i></a>
+                                </li>
+                                <li><a href="https://id.linkedin.com/in/akhmad-qasim-7196191a6" target="_blank"
+                                       class="social-icon"> <i class="fab fa-linkedin"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="mil-light-soft mil-up">© Copyright <span id="thisYear"></span> - Me. All Rights
+                            Reserved.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{% block js %}
+    <script src="{% static 'home/js/custom.js' %}"></script>
+{% endblock %}

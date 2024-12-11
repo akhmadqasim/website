@@ -1,0 +1,31 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+
+    <div id="content_layout">
+        <div class="grid xl:grid-cols-2 grid-cols-1 gap-6">
+            <div class="card">
+                <div class="card-body flex flex-col p-6">
+                    <header class="flex mb-5 items-center border-b border-slate-100 dark:border-slate-700 pb-5 -mx-6 px-6">
+                        <div class="flex-1">
+                            <div class="card-title text-slate-900 dark:text-white">{{ title }}</div>
+                        </div>
+                    </header>
+                    <form method="post">
+                        <div class="card-text h-full space-y-4">
+                            {% csrf_token %}
+                            <div class="input-area">
+                                <label for="id_name" class="form-label">Category Name</label>
+                                {{ form.name }}
+                            </div>
+                            <button class="btn inline-flex justify-center btn-dark dark:bg-slate-700 dark:text-slate-300 mt-3"
+                                    style="float: right">
+                                Add Category
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

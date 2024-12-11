@@ -1,0 +1,113 @@
+{% load static %}
+{% load auth_extras %}
+<div class="sidebar-menus bg-white dark:bg-slate-800 py-2 px-4 h-[calc(100%-80px)] overflow-y-auto z-50"
+     id="sidebar_menus">
+    <ul class="sidebar-menu">
+        <!-- Home Area -->
+        <li>
+            <a href="{% url 'dashboard' %}" class="navItem">
+                <span class="flex items-center">
+                    <iconify-icon class="nav-icon" icon="heroicons-outline:home"></iconify-icon>
+                    <span>Dashboard</span>
+                </span>
+            </a>
+        </li>
+
+        <!-- Category Area -->
+        <li class="sidebar-menu-title">BLOG</li>
+        {% if user|has_group:'Admin' %}
+            <li class="">
+                <a href="javascript:void(0)" class="navItem">
+                <span class="flex items-center">
+                    <iconify-icon class="nav-icon" icon="heroicons-outline:collection"></iconify-icon>
+                    <span>Category</span>
+                </span>
+                    <iconify-icon class="icon-arrow" icon="heroicons-outline:chevron-right"></iconify-icon>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="{% url 'category_list' %}">List</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'category_add' %}">Add</a>
+                    </li>
+                </ul>
+            </li>
+        {% endif %}
+        <li class="">
+            <a href="javascript:void(0)" class="navItem">
+                <span class="flex items-center">
+                    <iconify-icon class="nav-icon" icon="heroicons-outline:document-text"></iconify-icon>
+                    <span>Post</span>
+                </span>
+                <iconify-icon class="icon-arrow" icon="heroicons-outline:chevron-right"></iconify-icon>
+            </a>
+            <ul class="sidebar-submenu">
+                <li>
+                    <a href="{% url 'blog_list' %}">List</a>
+                </li>
+                <li>
+                    <a href="{% url 'blog_add' %}">Add</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="sidebar-menu-title">USER</li>
+        <li class="">
+            <a href="{% url 'user_profile' %}" class="navItem">
+                <span class="flex items-center">
+                    <iconify-icon class="nav-icon" icon="heroicons-outline:user"></iconify-icon>
+                    <span>Profile</span>
+                </span>
+            </a>
+        <li class="">
+            <a href="{% url 'user_api_manager' %}" class="navItem">
+                <span class="flex items-center">
+                    <iconify-icon class="nav-icon" icon="heroicons-outline:key"></iconify-icon>
+                    <span>API Manager</span>
+                </span>
+            </a>
+        </li>
+    </ul>
+    <div class="bg-slate-900 mb-10 mt-24 p-4 relative text-center rounded-2xl text-white"
+         id="sidebar_bottom_wizard">
+        <img src="{% static 'dashboard/images/svg/rabit.svg' %}" alt="" class="mx-auto relative -mt-[73px]">
+        <div class="max-w-[160px] mx-auto mt-6">
+            <div class="widget-title font-Inter mb-1">Github Profile</div>
+        </div>
+        <div class="mt-6">
+            <button class="bg-white hover:bg-opacity-80 text-slate-900 text-sm font-Inter rounded-md w-full block py-2 font-medium">
+                <a href="https://github.com/akhmadqasim">
+                    @akhmadqasim
+                </a>
+            </button>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let menuLinks = document.querySelectorAll('.sidebar-menu a');
+
+        function setActiveLink() {
+            for (let i = 0; i < menuLinks.length; i++) {
+                const link = menuLinks[i];
+                const parentLi = link.closest('ul.sidebar-menu > li');
+
+                if (link.href === window.location.href) {
+                    link.classList.add('active');
+                    if (parentLi && parentLi.classList.length === 0) {
+                        parentLi.classList.add('active');
+                    }
+                } else {
+                    link.classList.remove('active');
+                    if (parentLi && parentLi.classList.length === 0) {
+                        parentLi.classList.remove('active');
+                    }
+                }
+            }
+        }
+
+        setActiveLink();
+    });
+
+</script>
