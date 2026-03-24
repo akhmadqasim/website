@@ -1,8 +1,10 @@
-import { Geist, Geist_Mono, Figtree } from "next/font/google"
+import { Geist_Mono, Figtree } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
+import { FooterSection } from "@/components/sections/footer"
+import { Navbar } from "@/components/sections/navbar"
 
 const figtree = Figtree({subsets:['latin'],variable:'--font-sans'})
 
@@ -22,8 +24,12 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("antialiased", fontMono.variable, "font-sans", figtree.variable)}
     >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className="flex min-h-svh flex-col">
+        <ThemeProvider>
+          <Navbar />
+          <div className="flex-1">{children}</div>
+          <FooterSection />
+        </ThemeProvider>
       </body>
     </html>
   )
