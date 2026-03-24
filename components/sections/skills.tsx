@@ -39,8 +39,6 @@ const skills = [
     name: "Backend Development",
     description:
       "Scalable APIs and microservices with Node.js, Python, and Rust. From REST to real-time.",
-    href: "#",
-    cta: "Learn more",
     className: "col-span-3 lg:col-span-1",
     background: (
       <Marquee
@@ -72,8 +70,6 @@ const skills = [
     Icon: RocketIcon,
     name: "DevOps & Monitoring",
     description: "CI/CD pipelines, containerized deployments, and real-time observability with Grafana and Sentry.",
-    href: "#",
-    cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
     background: (
       <AnimatedListDemo className="absolute top-4 right-2 h-[300px] w-full scale-75 border-none [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] transition-all duration-300 ease-out group-hover:scale-90" />
@@ -83,8 +79,6 @@ const skills = [
     Icon: GlobeIcon,
     name: "System Architecture",
     description: "End-to-end system design — from mobile clients through API gateways to databases and cloud infrastructure.",
-    href: "#",
-    cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
     background: (
       <AnimatedBeamDemo className="absolute top-4 right-2 h-[300px] border-none [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] transition-all duration-300 ease-out group-hover:scale-105" />
@@ -95,8 +89,6 @@ const skills = [
     name: "iOS Development",
     description: "Native iOS apps with Swift and SwiftUI — from prototyping to App Store.",
     className: "col-span-3 lg:col-span-1",
-    href: "#",
-    cta: "Learn more",
     background: (
       <Calendar
         mode="single"
@@ -110,7 +102,7 @@ const skills = [
 export function SkillsSection() {
   return (
     <>
-      <section className="flex min-h-svh flex-col items-center justify-center px-6">
+      <section className="flex min-h-svh flex-col items-center justify-center px-6 text-center">
         <h2 className="text-4xl font-bold sm:text-5xl lg:text-6xl">
           What I Do
         </h2>
