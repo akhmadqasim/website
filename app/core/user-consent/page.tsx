@@ -5,9 +5,9 @@ export default function UserConsentPage() {
     <main className="min-h-svh px-6 py-24">
       <article className="prose prose-neutral dark:prose-invert mx-auto max-w-3xl">
         <h1>Your Privacy Choices</h1>
-        <p><strong>Last Updated: January 5, 2026</strong></p>
+        <p><strong>Last Updated: March 24, 2026</strong></p>
         <p>
-          This page explains how you can manage, modify, and delete your personal data within <strong>SIMSDIG</strong>. For full details on what data we collect and how it is used, please refer to our <a href="/core/privacy-policy">Privacy Policy</a>.
+          This page explains how you can manage and modify your personal data within <strong>SIMSDIG</strong>, as well as the limitations on data deletion. For full details on what data we collect and how it is used, please refer to our <a href="/core/privacy-policy">Privacy Policy</a>.
         </p>
 
         <hr />
@@ -22,14 +22,23 @@ export default function UserConsentPage() {
         <hr />
 
         <h2 id="deactivate-account">Deactivate Your Account</h2>
-        <p>To deactivate your account, you must submit an explicit request to the school&apos;s administrative office (Tata Usaha). Upon deactivation:</p>
+        <p>
+          User accounts in SIMSDIG are <strong>created and managed by the school administration</strong> — not by users from within the application. As such, account management (including deactivation) is handled by the school.
+        </p>
+        <p>Accounts are deactivated by the school administration based on academic status:</p>
+        <ul>
+          <li><strong>Graduation:</strong> Your account role is changed to <strong>alumni</strong> with limited access to the tracer study program (<em>program Kemendikti</em>).</li>
+          <li><strong>Transfer or dismissal:</strong> Your account is deactivated entirely.</li>
+          <li><strong>Voluntary request:</strong> You may request deactivation through the school&apos;s administrative office (Tata Usaha). Note that this will be treated as withdrawal from the school.</li>
+        </ul>
+        <p>Upon deactivation:</p>
         <ul>
           <li>Your login credentials will be disabled.</li>
           <li>You will no longer be able to access the Service.</li>
           <li>Your profile will no longer be visible to other users.</li>
         </ul>
         <p>
-          <strong>Note:</strong> Account deactivation does not result in permanent deletion of all data. See <a href="#data-deletion-limits">limitations on data deletion</a> below.
+          <strong>Note:</strong> Account deactivation does not result in permanent deletion of any data. All education records are retained in compliance with Indonesian national education regulations. See <a href="#data-deletion-limits">limitations on data deletion</a> below.
         </p>
 
         <hr />
@@ -53,11 +62,12 @@ export default function UserConsentPage() {
         <h2 id="revoke-permissions">Revoke Permissions</h2>
         <p>You can revoke device-level permissions at any time through your device&apos;s system settings:</p>
         <ul>
-          <li><strong>Camera:</strong> Used for profile photo and face-based attendance. Revoke via Settings → SIMSDIG → Camera.</li>
+          <li><strong>Camera:</strong> Used for attendance photos and profile photo capture. Revoke via Settings → SIMSDIG → Camera.</li>
           <li><strong>Location:</strong> Used for GPS-based attendance check-in/check-out. Revoke via Settings → SIMSDIG → Location.</li>
+          <li><strong>Photo Library:</strong> Used to select an existing photo when updating your profile picture. Revoke via Settings → SIMSDIG → Photos.</li>
         </ul>
         <p>
-          Revoking permissions may limit certain features of the Service (e.g., GPS attendance will not work without location access).
+          Revoking permissions may limit certain features of the Service (e.g., GPS attendance will not work without location access, face-based attendance will not work without camera access).
         </p>
 
         <hr />

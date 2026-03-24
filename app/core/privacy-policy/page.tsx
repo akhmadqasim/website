@@ -5,7 +5,7 @@ export default function PrivacyPolicyPage() {
     <main className="min-h-svh px-6 py-24">
       <article className="prose prose-neutral dark:prose-invert mx-auto max-w-3xl">
         <h1>Privacy Policy for SIMSDIG</h1>
-        <p><strong>Last Updated: January 5, 2026</strong></p>
+        <p><strong>Last Updated: March 24, 2026</strong></p>
         <p>
           This Privacy Policy describes how <strong>SIMSDIG</strong> (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) collects, uses, and shares your information when you use our mobile application and web platform (the &ldquo;Service&rdquo;). SIMSDIG is a school management platform developed by Akhmad Qasim and team, used by multiple educational institutions across Indonesia. We are committed to protecting your personal data and your privacy in accordance with Indonesian data protection law (UU PDP No. 27/2022) and applicable regulations.
         </p>
@@ -25,6 +25,7 @@ export default function PrivacyPolicyPage() {
           <li><a href="#data-storage">Data Storage Location</a></li>
           <li><a href="#data-breach">Data Breach Notification</a></li>
           <li><a href="#contact">Contact Information</a></li>
+          <li><a href="#changes">Changes to This Privacy Policy</a></li>
         </ol>
 
         <hr />
@@ -39,13 +40,16 @@ export default function PrivacyPolicyPage() {
 
         <h3>A. Data Shared Across All Roles</h3>
         <p>The following data is collected for all users (students, teachers, and staff):</p>
+        <p>
+          <strong>Important:</strong> User accounts are <strong>created and managed by the school administration</strong>, not by users themselves from within the application. Users do not register or create accounts through the app. Authentication is handled through the <strong>school&apos;s official web portal</strong>, not through an in-app login form.
+        </p>
         <ul>
-          <li><strong>Account:</strong> Email, secondary email, phone number, profile picture (avatar), and role-based permissions.</li>
-          <li><strong>Authentication:</strong> Hashed passwords and verification codes. Authentication is handled through a secure web-based login flow.</li>
+          <li><strong>Account:</strong> Email, secondary email, phone number, profile picture (avatar), and role-based permissions. Accounts are provisioned by school administrators.</li>
+          <li><strong>Authentication:</strong> Hashed passwords and verification codes. Authentication is handled through the school&apos;s secure web-based login flow, external to the mobile application.</li>
           <li><strong>Session Data:</strong> IP address, user agent, login history (country, browser type, device model, CPU architecture, OS version), and timestamp.</li>
           <li><strong>Attendance:</strong> Check-in/check-out timestamps, attendance status (present, late, permit, sick, absent, business trip), notes, and evidence attachments.</li>
           <li><strong>Location (Attendance):</strong> GPS coordinates (latitude/longitude) collected during check-in and check-out when GPS-based attendance is used. An out-of-zone flag indicates if the user is outside the designated area.</li>
-          <li><strong>Biometric (Attendance):</strong> Photos captured during face-based attendance. The Service supports GPS, QR code, face recognition, and manual attendance methods.</li>
+          <li><strong>Attendance Photos:</strong> Photos captured during face-based attendance as visual proof of presence. These photos are <strong>not processed as biometric data</strong> — no facial recognition templates, models, or biometric identifiers are generated or stored. Photos are reviewed manually by authorized education staff (<em>tenaga kependidikan</em>) for verification purposes only. Attendance photos are retained for <strong>one semester (6 months)</strong> as part of the attendance recap, after which they are deleted. The Service supports GPS, QR code, face-based (photo), and manual attendance methods.</li>
         </ul>
 
         <h3>B. Student Data (Peserta Didik)</h3>
@@ -81,13 +85,21 @@ export default function PrivacyPolicyPage() {
           <li><strong>Country/Region:</strong> Country codes and regional identifiers used for administrative classification (e.g., province, city, district).</li>
         </ul>
 
+        <h3>F. Device Permissions</h3>
+        <p>The Service requests the following device permissions. Each permission is optional and can be revoked at any time through your device&apos;s system settings.</p>
+        <ul>
+          <li><strong>Camera:</strong> Used to capture attendance photos as visual proof of presence during face-based attendance check-in, and to take a new profile photo. The camera is <strong>not</strong> used for facial recognition processing, advertising, or any purpose other than attendance verification and profile photo capture.</li>
+          <li><strong>Location (GPS):</strong> Used to record your coordinates (latitude/longitude) during GPS-based attendance check-in and check-out. This is used to verify that you are within the designated school attendance zone. Location data is <strong>not</strong> tracked continuously — it is only collected at the moment of check-in or check-out.</li>
+          <li><strong>Photo Library:</strong> Used to select an existing photo from your device&apos;s gallery when updating your profile picture. The Service does <strong>not</strong> access or read any other photos in your library.</li>
+        </ul>
+
         <hr />
 
         <h2 id="how-we-use">2. How We Use Your Information</h2>
         <p>We use the collected data for the following purposes:</p>
         <ul>
           <li><strong>Educational Administration:</strong> Managing student, teacher, and staff records across multiple schools.</li>
-          <li><strong>Attendance Management:</strong> Recording and verifying attendance through GPS, QR code, face recognition, or manual entry to reduce fraud in presence tracking.</li>
+          <li><strong>Attendance Management:</strong> Recording and verifying attendance through GPS, QR code, face-based photo, or manual entry to reduce fraud in presence tracking.</li>
           <li><strong>Service Delivery:</strong> Processing official school letters, documents, academic tracking, and class scheduling.</li>
           <li><strong>Security &amp; Authentication:</strong> Protecting your account from unauthorized access through login history monitoring and secure sessions.</li>
           <li><strong>School Logistics:</strong> Administrative classification for school zoning, transportation planning, and geofencing for attendance zones.</li>
@@ -100,7 +112,7 @@ export default function PrivacyPolicyPage() {
         <p>We <strong>do not sell</strong> your personal data to third parties. Data is shared only under the following conditions:</p>
         <ul>
           <li><strong>School Authorities:</strong> Authorized teachers and administrators have access to relevant data for educational purposes.</li>
-          <li><strong>Infrastructure Provider:</strong> The Service uses <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare</a> for security, performance, and content delivery. Cloudflare may process limited technical data (IP address, request headers) as part of its services.</li>
+          <li><strong>Infrastructure Provider:</strong> The Service uses <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare</a> for security, performance, and content delivery. Cloudflare may process limited technical data (IP address, request headers) as part of its services. As a global network provider, Cloudflare may route and process this technical data through servers located outside of Indonesia. No personal or educational data is shared with or stored by Cloudflare.</li>
           <li><strong>No Analytics or Advertising:</strong> The Service does not integrate any third-party analytics, advertising, or tracking SDKs.</li>
           <li><strong>Legal Compliance:</strong> When required by law, government regulations, or legal processes.</li>
         </ul>
@@ -142,9 +154,19 @@ export default function PrivacyPolicyPage() {
         <p>
           Your personal data is stored on the <strong>school&apos;s own server</strong> located in Indonesia and is retained for the duration of your enrollment at the school. The Service developer does not independently store or control this data — the school is the data controller.
         </p>
+        <p>
+          <strong>Attendance photos</strong> are retained for <strong>one semester (6 months)</strong> for attendance recap purposes, after which they are automatically deleted from the server.
+        </p>
 
         <h3>Account Deactivation</h3>
-        <p>To request account deactivation, you must submit an explicit request to the school&apos;s administrative office (Tata Usaha). Upon deactivation:</p>
+        <p>Account deactivation is managed by the school administration based on the student&apos;s academic status. Accounts are deactivated under the following circumstances:</p>
+        <ul>
+          <li><strong>Graduation:</strong> Upon graduation, the account role is changed to <strong>alumni</strong>. Alumni accounts have limited access to the Service, restricted to the tracer study program (<em>program Kemendikti</em>).</li>
+          <li><strong>Transfer:</strong> If a student transfers to another school, their account is deactivated.</li>
+          <li><strong>Dismissal:</strong> If a student is dismissed from the school, their account is deactivated.</li>
+          <li><strong>Voluntary request:</strong> A student may request account deactivation through the school&apos;s administrative office (Tata Usaha). This will be treated as withdrawal from the school.</li>
+        </ul>
+        <p>Upon deactivation:</p>
         <ul>
           <li>Your login credentials are disabled and you can no longer access the Service.</li>
           <li>Your profile is no longer visible to other users within the Service.</li>
@@ -175,7 +197,7 @@ export default function PrivacyPolicyPage() {
         <hr />
 
         <h2 id="data-storage">8. Data Storage Location</h2>
-        <p>All data is stored on servers located in <strong>Indonesia</strong>, typically hosted on-premise at each respective school. The Service does not transfer personal data to servers outside of Indonesia.</p>
+        <p>All personal and educational data is stored on servers located in <strong>Indonesia</strong>, typically hosted on-premise at each respective school. The Service does not transfer personal or educational data to servers outside of Indonesia. Limited technical data (such as IP address and request headers) may be processed internationally by <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare</a> as part of its security and content delivery services (see <a href="#data-sharing">Section 3</a>).</p>
 
         <hr />
 
@@ -202,8 +224,17 @@ export default function PrivacyPolicyPage() {
         </ul>
 
         <hr />
-        <p className="text-sm text-muted-foreground">
-          <em>Note: This policy may be updated periodically. Please check back for any changes.</em>
+
+        <h2 id="changes">11. Changes to This Privacy Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. When we make changes:
+        </p>
+        <ul>
+          <li>The &ldquo;Last Updated&rdquo; date at the top of this page will be revised.</li>
+          <li>For material changes that affect how your personal data is collected, used, or shared, we will notify affected users via <strong>email</strong>.</li>
+        </ul>
+        <p>
+          We encourage you to review this page periodically to stay informed about how we protect your data.
         </p>
       </article>
     </main>
