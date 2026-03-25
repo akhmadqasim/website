@@ -5,12 +5,12 @@ const SUPPORTED_LANGS = ["en", "id", "zh", "ja", "de", "ar"] as const
 type Lang = (typeof SUPPORTED_LANGS)[number]
 
 const titles: Record<Lang, string> = {
-  en: "User Privacy Choices - SIMSDIG",
-  id: "Pilihan Privasi Pengguna - SIMSDIG",
-  zh: "用户隐私选择 - SIMSDIG",
-  ja: "ユーザープライバシーの選択 - SIMSDIG",
-  de: "Datenschutzoptionen - SIMSDIG",
-  ar: "خيارات خصوصية المستخدم - SIMSDIG",
+  en: "Privacy Rights - SIMSDIG",
+  id: "Hak Privasi Pengguna - SIMSDIG",
+  zh: "隐私权 - SIMSDIG",
+  ja: "プライバシーの権利 - SIMSDIG",
+  de: "Datenschutzrechte - SIMSDIG",
+  ar: "حقوق الخصوصية - SIMSDIG",
 }
 
 const descriptions: Record<Lang, string> = {
@@ -35,9 +35,9 @@ export async function generateMetadata({
     title: titles[lang],
     description: descriptions[lang],
     alternates: {
-      canonical: `/core/${lang}/user-consent`,
+      canonical: `/core/${lang}/privacy-rights`,
       languages: Object.fromEntries(
-        SUPPORTED_LANGS.map((l) => [l, `/core/${l}/user-consent`])
+        SUPPORTED_LANGS.map((l) => [l, `/core/${l}/privacy-rights`])
       ),
     },
   }
@@ -48,22 +48,22 @@ const contentMap: Record<
   Record<string, () => Promise<{ default: React.ComponentType }>>
 > = {
   en: {
-    "user-consent": () => import("@/content/core/en/user-consent.mdx"),
+    "privacy-rights": () => import("@/content/core/en/privacy-rights.mdx"),
   },
   id: {
-    "user-consent": () => import("@/content/core/id/user-consent.mdx"),
+    "privacy-rights": () => import("@/content/core/id/privacy-rights.mdx"),
   },
   zh: {
-    "user-consent": () => import("@/content/core/zh/user-consent.mdx"),
+    "privacy-rights": () => import("@/content/core/zh/privacy-rights.mdx"),
   },
   ja: {
-    "user-consent": () => import("@/content/core/ja/user-consent.mdx"),
+    "privacy-rights": () => import("@/content/core/ja/privacy-rights.mdx"),
   },
   de: {
-    "user-consent": () => import("@/content/core/de/user-consent.mdx"),
+    "privacy-rights": () => import("@/content/core/de/privacy-rights.mdx"),
   },
   ar: {
-    "user-consent": () => import("@/content/core/ar/user-consent.mdx"),
+    "privacy-rights": () => import("@/content/core/ar/privacy-rights.mdx"),
   },
 }
 
@@ -71,7 +71,7 @@ export function generateStaticParams() {
   return SUPPORTED_LANGS.map((lang) => ({ lang }))
 }
 
-export default async function UserConsentPage({
+export default async function PrivacyRightsPage({
   params,
 }: {
   params: Promise<{ lang: string }>
@@ -82,7 +82,7 @@ export default async function UserConsentPage({
     notFound()
   }
 
-  const loader = contentMap[lang as Lang]?.["user-consent"]
+  const loader = contentMap[lang as Lang]?.["privacy-rights"]
   if (!loader) notFound()
 
   const { default: Content } = await loader()

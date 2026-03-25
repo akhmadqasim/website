@@ -1,6 +1,6 @@
 ---
 name: translator
-description: Translates legal documents (privacy-policy, user-consent) between languages while preserving MDX structure, legal accuracy, and component usage
+description: Translates legal documents (privacy-policy, privacy-rights) between languages while preserving MDX structure, legal accuracy, and component usage
 tools: Read, Write, Grep, Glob
 model: sonnet
 ---
@@ -30,7 +30,7 @@ Translate legal documents in `content/{project}/{lang}/` to a target language. T
 
 ### Internal Links
 - Update internal document cross-references to use the target language code
-  - Source `en`: `/core/en/user-consent` → Target `id`: `/core/id/user-consent`
+  - Source `en`: `/core/en/privacy-rights` → Target `id`: `/core/id/privacy-rights`
   - Source `id`: `/core/id/privacy-policy` → Target `en`: `/core/en/privacy-policy`
 
 ### Content Integrity

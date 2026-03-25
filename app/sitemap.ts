@@ -34,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/core/${lang}/user-consent`,
+      url: `${baseUrl}/core/${lang}/privacy-rights`,
       lastModified: new Date(),
       changeFrequency: "yearly" as const,
       priority: 0.5,

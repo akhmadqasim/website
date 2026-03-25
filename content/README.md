@@ -10,7 +10,7 @@ content/
 └── {project}/
     ├── {lang}/      # Language-specific content (e.g., en, id, zh, ja, de, ar)
     │   ├── privacy-policy.mdx
-    │   └── user-consent.mdx
+    │   └── privacy-rights.mdx
     └── snapshots/   # Archived versions of legal documents
 ```
 
