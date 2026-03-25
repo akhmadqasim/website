@@ -158,8 +158,9 @@ export function InfraSection() {
               <button
                 key={tool.name}
                 onClick={() => setSelected(i)}
+                aria-pressed={selected === i}
                 className={cn(
-                  "rounded-xl border p-4 text-left transition-colors",
+                  "rounded-xl border p-4 text-left transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                   selected === i
                     ? "border-foreground bg-muted"
                     : "hover:bg-muted/50"

@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Geist_Mono, Figtree } from "next/font/google"
@@ -15,6 +15,13 @@ const fontMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
 })
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#1c1c1c" },
+  ],
+}
 
 export const metadata: Metadata = {
   title: {
@@ -63,8 +70,14 @@ export default function RootLayout({
     >
       <body className="flex min-h-svh flex-col">
         <ThemeProvider>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:rounded-full focus:bg-foreground focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-background"
+          >
+            Skip to main content
+          </a>
           <Navbar />
-          <div className="flex-1">{children}</div>
+          <div id="main-content" className="flex-1">{children}</div>
           <FooterSection />
         </ThemeProvider>
         <Analytics />

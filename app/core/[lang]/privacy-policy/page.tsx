@@ -90,7 +90,7 @@ export default async function PrivacyPolicyPage({
 
   return (
     <main className="min-h-svh px-6 py-24">
-      <article dir={dir} className="prose prose-neutral dark:prose-invert mx-auto max-w-3xl">
+      <article dir={dir} lang={lang} className="prose prose-neutral dark:prose-invert mx-auto max-w-3xl">
         <Content />
       </article>
     </main>
