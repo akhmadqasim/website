@@ -1,7 +1,46 @@
+import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 const SUPPORTED_LANGS = ["en", "id", "zh", "ja", "de", "ar"] as const
 type Lang = (typeof SUPPORTED_LANGS)[number]
+
+const titles: Record<Lang, string> = {
+  en: "Privacy Policy - SIMSDIG",
+  id: "Kebijakan Privasi - SIMSDIG",
+  zh: "隐私政策 - SIMSDIG",
+  ja: "プライバシーポリシー - SIMSDIG",
+  de: "Datenschutzrichtlinie - SIMSDIG",
+  ar: "سياسة الخصوصية - SIMSDIG",
+}
+
+const descriptions: Record<Lang, string> = {
+  en: "Learn how SIMSDIG collects, uses, and protects your personal data. Our privacy policy covers data handling practices for the school management platform in compliance with Indonesian regulations.",
+  id: "Pelajari bagaimana SIMSDIG mengumpulkan, menggunakan, dan melindungi data pribadi Anda. Kebijakan privasi kami mencakup praktik penanganan data untuk platform manajemen sekolah sesuai dengan peraturan Indonesia.",
+  zh: "了解SIMSDIG如何收集、使用和保护您的个人数据。我们的隐私政策涵盖了学校管理平台的数据处理实践，符合印度尼西亚法规。",
+  ja: "SIMSDIGがお客様の個人データをどのように収集、使用、保護するかをご確認ください。本プライバシーポリシーは、インドネシアの規制に準拠した学校管理プラットフォームのデータ取り扱い慣行について説明しています。",
+  de: "Erfahren Sie, wie SIMSDIG Ihre persönlichen Daten erfasst, verwendet und schützt. Unsere Datenschutzrichtlinie beschreibt die Datenverarbeitungspraktiken der Schulverwaltungsplattform in Übereinstimmung mit indonesischen Vorschriften.",
+  ar: "تعرّف على كيفية جمع SIMSDIG لبياناتك الشخصية واستخدامها وحمايتها. تغطي سياسة الخصوصية الخاصة بنا ممارسات معالجة البيانات لمنصة إدارة المدارس وفقًا للوائح الإندونيسية.",
+}
+
+export function generateMetadata({
+  params,
+}: {
+  params: { lang: string }
+}): Metadata {
+  const lang = params.lang as Lang
+  if (!SUPPORTED_LANGS.includes(lang)) return {}
+
+  return {
+    title: titles[lang],
+    description: descriptions[lang],
+    alternates: {
+      canonical: `/core/${lang}/privacy-policy`,
+      languages: Object.fromEntries(
+        SUPPORTED_LANGS.map((l) => [l, `/core/${l}/privacy-policy`])
+      ),
+    },
+  }
+}
 
 const contentMap: Record<
   Lang,
