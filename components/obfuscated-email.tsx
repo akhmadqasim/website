@@ -1,7 +1,3 @@
-"use client"
-
-import { useState } from "react"
-
 export function ObfuscatedEmail({
   user,
   domain,
@@ -9,19 +5,22 @@ export function ObfuscatedEmail({
   user: string
   domain: string
 }) {
-  const [revealed, setRevealed] = useState(false)
+  const reversed = [...`${user}@${domain}`].reverse().join("")
 
-  if (!revealed) {
-    return (
-      <button
-        type="button"
-        onClick={() => setRevealed(true)}
-        className="cursor-pointer underline decoration-dotted underline-offset-4 text-inherit"
-      >
+  return (
+    <label className="inline cursor-pointer">
+      <input type="checkbox" className="peer sr-only" />
+      <span className="peer-checked:hidden underline decoration-dotted underline-offset-4 text-inherit">
         [Click to reveal email]
-      </button>
-    )
-  }
-
-  return <span>{`${user}@${domain}`}</span>
+      </span>
+      <span
+        className="hidden peer-checked:inline"
+        role="text"
+        aria-label={`${user} at ${domain}`}
+        style={{ unicodeBidi: "bidi-override", direction: "rtl" }}
+      >
+        {reversed}
+      </span>
+    </label>
+  )
 }

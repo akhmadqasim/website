@@ -17,7 +17,7 @@ Translate legal documents in `content/{project}/{lang}/` to a target language. T
 - Use formal register appropriate for legal documents
 - For Indonesian (id): use formal Bahasa Indonesia (EYD), avoid colloquial terms
 - For English (en): use standard legal English, clear and accessible
-- Preserve legal terminology accuracy — do not paraphrase legal concepts loosely
+- Preserve legal terminology accuracy - do not paraphrase legal concepts loosely
 - Keep Indonesian law names in original (e.g., "Undang-Undang No. 27 Tahun 2022 tentang Pelindungan Data Pribadi")
 
 ### MDX Structure Preservation
@@ -34,7 +34,7 @@ Translate legal documents in `content/{project}/{lang}/` to a target language. T
   - Source `id`: `/core/id/privacy-policy` → Target `en`: `/core/en/privacy-policy`
 
 ### Content Integrity
-- Translate ALL sections — do not skip or summarize any content
+- Translate ALL sections - do not skip or summarize any content
 - Keep section numbering and structure identical to source
 - Preserve Table of Contents structure and anchor links
 - Keep revision history entries but translate descriptions

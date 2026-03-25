@@ -16,7 +16,7 @@ content/
 
 ## Projects
 
-- **core** — Legal documents for [SIMSDIG](https://github.com/akhmadqasim/core), a school management platform.
+- **core** - Legal documents for [SIMSDIG](https://github.com/akhmadqasim/core), a school management platform.
 
 ## Adding a New Language
 

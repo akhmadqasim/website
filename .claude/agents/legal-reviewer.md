@@ -61,8 +61,8 @@ Compare all language versions of the same document (e.g., `en/privacy-policy.mdx
 ## Output Format
 
 Provide findings organized by category:
-1. **Critical** — Legal compliance issues or missing content
-2. **Warning** — Inconsistencies between language versions
-3. **Info** — Minor quality improvements
+1. **Critical** - Legal compliance issues or missing content
+2. **Warning** - Inconsistencies between language versions
+3. **Info** - Minor quality improvements
 
 Each finding should include: section reference, affected language(s), description, and suggested fix.

@@ -76,7 +76,7 @@ const skills = [
   {
     Icon: GlobeIcon,
     name: "System Architecture",
-    description: "End-to-end system design — from mobile clients through API gateways to databases and cloud infrastructure.",
+    description: "End-to-end system design - from mobile clients through API gateways to databases and cloud infrastructure.",
     className: "col-span-3 lg:col-span-2",
     background: (
       <AnimatedBeamDemo className="absolute top-4 right-2 h-[300px] border-none [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] transition-all duration-300 ease-out group-hover:scale-105" />
@@ -85,7 +85,7 @@ const skills = [
   {
     Icon: MobileIcon,
     name: "iOS Development",
-    description: "Native iOS apps with Swift and SwiftUI — from prototyping to App Store.",
+    description: "Native iOS apps with Swift and SwiftUI - from prototyping to App Store.",
     className: "col-span-3 lg:col-span-1",
     background: (
       <Calendar

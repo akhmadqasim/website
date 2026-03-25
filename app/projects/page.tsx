@@ -14,19 +14,19 @@ const projects: {
 }[] = [
   {
     name: "Chemist Fun Days",
-    desc: "Full-stack platform for a national chemistry competition — event landing page with competition details, sponsor showcase, and registration flow.",
+    desc: "Full-stack platform for a national chemistry competition - event landing page with competition details, sponsor showcase, and registration flow.",
     image: chemistfundays,
     href: "https://chemistfundays.id",
   },
   {
     name: "CFD Dashboard",
-    desc: "Participant dashboard for Chemist Fun Days — authentication, registration management, and competition tracking for hundreds of participants.",
+    desc: "Participant dashboard for Chemist Fun Days - authentication, registration management, and competition tracking for hundreds of participants.",
     image: cfdDashboard,
     href: "https://dashboard.chemistfundays.id",
   },
   {
     name: "SIMS SMAN 1 Samarinda",
-    desc: "School management information system for one of the top high schools in East Kalimantan — student data, academic records, and administrative tools.",
+    desc: "School management information system for one of the top high schools in East Kalimantan - student data, academic records, and administrative tools.",
     image: simsSmansa,
     href: "https://sims.sman1samarinda.sch.id",
   },

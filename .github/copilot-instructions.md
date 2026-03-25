@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Personal portfolio website for Akhmad Qasim (Backend & iOS Developer). Also hosts legal pages (privacy policy, user consent) for the iOS SaaS app **SIMSDIG** — a school management platform.
+Personal portfolio website for Akhmad Qasim (Backend & iOS Developer). Also hosts legal pages (privacy policy, user consent) for the iOS SaaS app **SIMSDIG** - a school management platform.
 
 ## Tech Stack
 
@@ -26,13 +26,13 @@ Personal portfolio website for Akhmad Qasim (Backend & iOS Developer). Also host
 
 ## Folder Structure
 
-- `app/` — Next.js App Router pages
-- `components/sections/` — Page sections (hero, skills, footer, etc.)
-- `components/ui/` — shadcn/ui and Magic UI components
-- `content/{project}/{lang}/` — MDX content organized by project and language
-- `.claude/skills/` — Claude Code skill definitions
-- `.claude/rules/` — Path-scoped rules (MDX, components, legal pages)
-- `.claude/agents/` — Custom subagents (legal reviewer, etc.)
+- `app/` - Next.js App Router pages
+- `components/sections/` - Page sections (hero, skills, footer, etc.)
+- `components/ui/` - shadcn/ui and Magic UI components
+- `content/{project}/{lang}/` - MDX content organized by project and language
+- `.claude/skills/` - Claude Code skill definitions
+- `.claude/rules/` - Path-scoped rules (MDX, components, legal pages)
+- `.claude/agents/` - Custom subagents (legal reviewer, etc.)
 
 ## Commit Messages
 
@@ -43,7 +43,7 @@ Personal portfolio website for Akhmad Qasim (Backend & iOS Developer). Also host
 ## Interaction Style
 
 - Always use the `ask_user` tool to gather feedback after every change
-- Never stop the conversation — keep iterating until the user says "BERHENTI!" or "STOP!"
+- Never stop the conversation - keep iterating until the user says "BERHENTI!" or "STOP!"
 - Ask for confirmation before making significant changes
 
 ## Coding Guidelines

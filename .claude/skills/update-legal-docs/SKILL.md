@@ -1,6 +1,6 @@
 ---
 name: update-legal-docs
-description: Use when the user wants to update, edit, or modify any legal document page — including privacy policy, user privacy choices, terms of service, or other legal/compliance pages. Ensures proper versioning with snapshot backups, revision history updates, and date changes.
+description: Use when the user wants to update, edit, or modify any legal document page - including privacy policy, user privacy choices, terms of service, or other legal/compliance pages. Ensures proper versioning with snapshot backups, revision history updates, and date changes.
 disable-model-invocation: true
 ---
 
@@ -27,7 +27,7 @@ Before editing, duplicate the current file into `content/{project}/snapshots/` w
 content/{project}/snapshots/{doc-name}_{DD-month-YYYY}.mdx
 ```
 
-Example: `privacy-policy_24-march-2026.mdx` — underscore separates doc name from date.
+Example: `privacy-policy_24-march-2026.mdx` - underscore separates doc name from date.
 
 The date in the filename should match the "Last Updated" date **before** the change, not today's date.
 
@@ -48,7 +48,7 @@ Change the date at the top of the document to today's date:
 Add a new entry at the bottom of the document in the "Revision History" section:
 
 ```markdown
-- **[Today's Date]** — [Brief description of changes made].
+- **[Today's Date]** - [Brief description of changes made].
 ```
 
 ### 5. Type Check
@@ -60,12 +60,12 @@ Run `bunx tsc --noEmit` to ensure no TypeScript errors.
 Commit with a descriptive message:
 
 ```
-docs: update {project} {doc-name} — [brief description]
+docs: update {project} {doc-name} - [brief description]
 ```
 
 ## Notes
 
-- Snapshots are read-only archives — never edit snapshot files.
+- Snapshots are read-only archives - never edit snapshot files.
 - The Table of Contents section numbers must be updated if sections are added/removed.
 - All emails must use the `<ObfuscatedEmail>` component (never plain text emails).
 - If adding new sections, update the TOC and renumber all subsequent sections.
