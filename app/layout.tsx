@@ -54,15 +54,19 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Akhmad Qasim",
-  url: "https://akhmadqasim.com",
-  jobTitle: "Software Developer",
-  image: "https://akhmadqasim.com/icon.png",
-  sameAs: [
-    "https://github.com/akhmadqasim",
-    "https://instagram.com/akhmadqasim",
-  ],
+  "@type": "ProfilePage",
+  mainEntity: {
+    "@type": "Person",
+    name: "Akhmad Qasim",
+    url: "https://akhmadqasim.com",
+    jobTitle: "Software Developer",
+    description: "Backend & iOS Developer from Indonesia",
+    image: "https://akhmadqasim.com/icon.png",
+    sameAs: [
+      "https://github.com/akhmadqasim",
+      "https://instagram.com/akhmadqasim",
+    ],
+  },
 }
 
 export default function RootLayout({
