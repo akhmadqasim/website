@@ -1,25 +1,33 @@
 "use client"
 
-import Image from "next/image"
+import Image, { type StaticImageData } from "next/image"
 import { motion } from "motion/react"
+import chemistfundays from "@/public/chemistfundays.id.png"
+import cfdDashboard from "@/public/dashboard.chemistfundays.id.png"
+import simsSmansa from "@/public/sims.sman1samarinda.sch.id.png"
 
-const projects = [
+const projects: {
+  name: string
+  desc: string
+  image: StaticImageData
+  href: string
+}[] = [
   {
     name: "Chemist Fun Days",
     desc: "Full-stack platform for a national chemistry competition — event landing page with competition details, sponsor showcase, and registration flow.",
-    image: "/chemistfundays.id.png",
+    image: chemistfundays,
     href: "https://chemistfundays.id",
   },
   {
     name: "CFD Dashboard",
     desc: "Participant dashboard for Chemist Fun Days — authentication, registration management, and competition tracking for hundreds of participants.",
-    image: "/dashboard.chemistfundays.id.png",
+    image: cfdDashboard,
     href: "https://dashboard.chemistfundays.id",
   },
   {
     name: "SIMS SMAN 1 Samarinda",
     desc: "School management information system for one of the top high schools in East Kalimantan — student data, academic records, and administrative tools.",
-    image: "/sims.sman1samarinda.sch.id.png",
+    image: simsSmansa,
     href: "https://sims.sman1samarinda.sch.id",
   },
 ]
@@ -54,8 +62,8 @@ export default function ProjectsPage() {
                 <Image
                   src={project.image}
                   alt={project.name}
-                  width={1920}
-                  height={1080}
+                  placeholder="blur"
+                  priority={i === 0}
                   className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
