@@ -22,12 +22,13 @@ const descriptions: Record<Lang, string> = {
   ar: "إدارة خيارات الخصوصية الخاصة بك في SIMSDIG. تعرّف على ضوابط جمع البيانات وإدارة الموافقة وحقوقك المتعلقة بالبيانات الشخصية في منصة إدارة المدارس الخاصة بنا.",
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { lang: string }
-}): Metadata {
-  const lang = params.lang as Lang
+  params: Promise<{ lang: string }>
+}): Promise<Metadata> {
+  const { lang: rawLang } = await params
+  const lang = rawLang as Lang
   if (!SUPPORTED_LANGS.includes(lang)) return {}
 
   return {
