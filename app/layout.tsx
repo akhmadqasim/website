@@ -52,6 +52,19 @@ export const metadata: Metadata = {
   },
 }
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Akhmad Qasim",
+  url: "https://akhmadqasim.com",
+  jobTitle: "Software Developer",
+  image: "https://akhmadqasim.com/icon.png",
+  sameAs: [
+    "https://github.com/akhmadqasim",
+    "https://instagram.com/akhmadqasim",
+  ],
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -69,10 +82,14 @@ export default function RootLayout({
       )}
     >
       <body className="flex min-h-svh flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ThemeProvider>
           <a
             href="#main-content"
-            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:rounded-full focus:bg-foreground focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-background"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-60 focus:rounded-full focus:bg-foreground focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-background"
           >
             Skip to main content
           </a>
