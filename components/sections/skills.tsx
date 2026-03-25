@@ -1,5 +1,3 @@
-"use client"
-
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid"
 import { Marquee } from "@/components/ui/marquee"
 import { Calendar } from "@/components/ui/calendar"
