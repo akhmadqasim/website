@@ -17,7 +17,7 @@ Review legal documents in `content/{project}/{lang}/` for the checks below.
 - Apple App Store privacy requirements
 
 ## 2. Content Quality
-- All email addresses use ObfuscatedEmail component (no plain text)
+- All email addresses are present and correct
 - Consistent section numbering
 - Table of Contents matches actual sections
 - Revision history is up to date
@@ -45,7 +45,7 @@ Compare all language versions of the same document (e.g., `en/privacy-policy.mdx
 - Data types, retention periods, and specific numbers match exactly
 - Legal references (law names, article numbers) are identical
 - Email addresses and contact info are the same
-- ObfuscatedEmail component props are identical
+- Email addresses are identical
 
 ### Link Consistency
 - Internal cross-references use correct language code for each version

@@ -21,8 +21,6 @@ Translate legal documents in `content/{project}/{lang}/` to a target language. T
 - Keep Indonesian law names in original (e.g., "Undang-Undang No. 27 Tahun 2022 tentang Pelindungan Data Pribadi")
 
 ### MDX Structure Preservation
-- Keep all MDX imports exactly as-is (e.g., `import { ObfuscatedEmail } from "@/components/obfuscated-email"`)
-- Keep all component usage intact (e.g., `<ObfuscatedEmail user="..." domain="..." />`)
 - Preserve HTML tags with attributes (e.g., `<h2 id="section-name">`)
 - Keep anchor link `id` attributes in English regardless of target language
 - Preserve all markdown formatting (bold, links, lists, blockquotes)

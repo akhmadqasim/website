@@ -67,5 +67,4 @@ docs: update {project} {doc-name} - [brief description]
 
 - Snapshots are read-only archives - never edit snapshot files.
 - The Table of Contents section numbers must be updated if sections are added/removed.
-- All emails must use the `<ObfuscatedEmail>` component (never plain text emails).
 - If adding new sections, update the TOC and renumber all subsequent sections.

@@ -48,7 +48,6 @@ Personal portfolio website for Akhmad Qasim (Backend & iOS Developer). Also host
 
 ## Coding Guidelines
 
-- All emails must use the `<ObfuscatedEmail>` component (never plain text emails in public pages)
 - MDX headings that need anchor links use HTML `<h2 id="...">` syntax
 - Use Tailwind CSS v4 plugin syntax in globals.css (`@plugin` instead of tailwind.config)
 
