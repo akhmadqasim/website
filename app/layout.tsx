@@ -64,7 +64,7 @@ const jsonLd = {
     image: "https://akhmadqasim.com/icon.png",
     sameAs: [
       "https://github.com/akhmadqasim",
-      "https://instagram.com/akhmadqasim",
+      "https://instagram.com/akhmad_qasim",
     ],
   },
 }

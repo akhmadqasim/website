@@ -19,7 +19,7 @@ export function HeroSection() {
           <Link href="/projects">View My Work</Link>
         </Button>
         <Button size="lg" variant="outline" className="rounded-full px-8" asChild>
-          <a href="https://instagram.com/akhmadqasim" target="_blank" rel="noopener noreferrer">
+          <a href="https://instagram.com/akhmad_qasim" target="_blank" rel="noopener noreferrer">
             Get in Touch
           </a>
         </Button>

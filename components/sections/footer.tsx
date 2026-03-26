@@ -7,7 +7,7 @@ export function FooterSection() {
           <a href="https://github.com/akhmadqasim" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground">
             GitHub
           </a>
-          <a href="https://instagram.com/akhmadqasim" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground">
+          <a href="https://instagram.com/akhmad_qasim" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground">
             Instagram
           </a>
         </div>
