@@ -56,7 +56,7 @@ export default async function Image() {
               marginTop: "16px",
             }}
           >
-            akhmadqasim.com
+            www.akhmadqasim.com
           </div>
         </div>
       </div>

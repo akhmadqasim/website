@@ -30,11 +30,12 @@ export const metadata: Metadata = {
   },
   description:
     "Personal portfolio of Akhmad Qasim - a Backend & iOS Developer from Indonesia. Explore projects, skills, and experience in building mobile apps, APIs, and scalable software solutions.",
-  metadataBase: new URL("https://akhmadqasim.com"),
+  metadataBase: new URL("https://www.akhmadqasim.com"),
+  
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://akhmadqasim.com",
+    url: "https://www.akhmadqasim.com",
     siteName: "Akhmad Qasim",
     title: "Akhmad Qasim",
     description:
@@ -50,6 +51,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+
 }
 
 const jsonLd = {
@@ -58,10 +60,10 @@ const jsonLd = {
   mainEntity: {
     "@type": "Person",
     name: "Akhmad Qasim",
-    url: "https://akhmadqasim.com",
+    url: "https://www.akhmadqasim.com",
     jobTitle: "Software Developer",
     description: "Backend & iOS Developer from Indonesia",
-    image: "https://akhmadqasim.com/icon.png",
+    image: "https://www.akhmadqasim.com/icon.png",
     sameAs: [
       "https://github.com/akhmadqasim",
       "https://instagram.com/akhmad_qasim",

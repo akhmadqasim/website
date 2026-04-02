@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next"
 const SUPPORTED_LANGS = ["en", "id", "zh", "ja", "de", "ar"] as const
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://akhmadqasim.com"
+  const baseUrl = "https://www.akhmadqasim.com"
 
   const staticPages: MetadataRoute.Sitemap = [
     {

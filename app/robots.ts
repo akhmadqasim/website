@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://akhmadqasim.com/sitemap.xml",
+    sitemap: "https://www.akhmadqasim.com/sitemap.xml",
   }
 }

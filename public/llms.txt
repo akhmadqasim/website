@@ -6,13 +6,13 @@ Akhmad Qasim is a Backend & iOS Developer who builds scalable server architectur
 
 ## Pages
 
-- [Home](https://akhmadqasim.com): Landing page with introduction, skills overview, network infrastructure tools, and project showcase
-- [Skills](https://akhmadqasim.com/skills): Detailed skills in Backend Development (TypeScript, Python, Node.js, PostgreSQL, Redis), DevOps (Docker, GitHub Actions, Grafana, Sentry), System Architecture, and iOS Development (Swift, SwiftUI)
-- [Projects](https://akhmadqasim.com/projects): Portfolio of built projects
+- [Home](https://www.akhmadqasim.com): Landing page with introduction, skills overview, network infrastructure tools, and project showcase
+- [Skills](https://www.akhmadqasim.com/skills): Detailed skills in Backend Development (TypeScript, Python, Node.js, PostgreSQL, Redis), DevOps (Docker, GitHub Actions, Grafana, Sentry), System Architecture, and iOS Development (Swift, SwiftUI)
+- [Projects](https://www.akhmadqasim.com/projects): Portfolio of built projects
 
 ## Projects
 
-- [Chemist Fun Days](https://chemistfundays.id): Full-stack platform for a national chemistry competition - event landing page with competition details, sponsor showcase, and registration flow
+- [Chemist Fun Days](https://www.chemistfundays.id): Full-stack platform for a national chemistry competition - event landing page with competition details, sponsor showcase, and registration flow
 - [CFD Dashboard](https://dashboard.chemistfundays.id): Participant dashboard for Chemist Fun Days - authentication, registration management, and competition tracking
 - [SIMS SMAN 1 Samarinda](https://sims.sman1samarinda.sch.id): School management information system for one of the top high schools in East Kalimantan - student data, academic records, and administrative tools
 

@@ -89,7 +89,7 @@ function VlanTerminal() {
 function DnsTerminal() {
   return (
     <Terminal className={terminalClass}>
-      <TypingAnimation>&gt; dig akhmadqasim.com</TypingAnimation>
+      <TypingAnimation>&gt; dig www.akhmadqasim.com</TypingAnimation>
       <AnimatedSpan className="text-green-500">✔ A record → 104.xx.xx.xx (Cloudflare)</AnimatedSpan>
       <AnimatedSpan className="text-green-500">✔ CNAME www → akhmadqasim.com</AnimatedSpan>
       <AnimatedSpan className="text-green-500">✔ MX → mail provider configured</AnimatedSpan>
