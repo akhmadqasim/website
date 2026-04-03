@@ -4,6 +4,7 @@ export const siteUrl = "https://www.akhmadqasim.com"
 export const siteName = "Akhmad Qasim"
 export const siteDescription =
   "Personal portfolio of Akhmad Qasim - a Backend & iOS Developer from Indonesia. Explore projects, skills, and experience in building mobile apps, APIs, and scalable software solutions."
+export const ogImageUrl = `${siteUrl}/og`
 
 export const siteViewport: Viewport = {
   themeColor: [
@@ -28,7 +29,7 @@ export const baseMetadata: Metadata = {
     description: siteDescription,
     images: [
       {
-        url: `${siteUrl}/opengraph-image`,
+        url: ogImageUrl,
         width: 1200,
         height: 630,
         alt: siteName,
@@ -39,7 +40,7 @@ export const baseMetadata: Metadata = {
     card: "summary_large_image",
     title: siteName,
     description: siteDescription,
-    images: [`${siteUrl}/opengraph-image`],
+    images: [ogImageUrl],
   },
   robots: {
     index: true,

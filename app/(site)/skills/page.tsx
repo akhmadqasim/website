@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 
 import { InfraSection } from "@/components/sections/infra"
 import { SkillsSection } from "@/components/sections/skills"
-import { siteName, siteUrl } from "@/lib/site"
+import { ogImageUrl, siteName, siteUrl } from "@/lib/site"
 
 const title = "Skills"
 const description =
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName,
     images: [
       {
-        url: `${siteUrl}/opengraph-image`,
+        url: ogImageUrl,
         width: 1200,
         height: 630,
         alt: siteName,
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: socialTitle,
     description,
-    images: [`${siteUrl}/opengraph-image`],
+    images: [ogImageUrl],
   },
 }
 

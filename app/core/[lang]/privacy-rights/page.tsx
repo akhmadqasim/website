@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import { siteName, siteUrl } from "@/lib/site"
+import { ogImageUrl, siteName, siteUrl } from "@/lib/site"
 
 const SUPPORTED_LANGS = ["en", "id", "zh", "ja", "de", "ar"] as const
 type Lang = (typeof SUPPORTED_LANGS)[number]
@@ -62,7 +62,7 @@ export async function generateMetadata({
       siteName,
       images: [
         {
-          url: `${siteUrl}/opengraph-image`,
+          url: ogImageUrl,
           width: 1200,
           height: 630,
           alt: siteName,
@@ -74,7 +74,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: socialTitle,
       description,
-      images: [`${siteUrl}/opengraph-image`],
+      images: [ogImageUrl],
     },
   }
 }
