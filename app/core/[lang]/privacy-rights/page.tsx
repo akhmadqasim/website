@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
+import { siteName, siteUrl } from "@/lib/site"
+
 const SUPPORTED_LANGS = ["en", "id", "zh", "ja", "de", "ar"] as const
 type Lang = (typeof SUPPORTED_LANGS)[number]
 
@@ -22,6 +24,15 @@ const descriptions: Record<Lang, string> = {
   ar: "إدارة خيارات الخصوصية الخاصة بك في SIMSDIG. تعرّف على ضوابط جمع البيانات وإدارة الموافقة وحقوقك المتعلقة بالبيانات الشخصية في منصة إدارة المدارس الخاصة بنا.",
 }
 
+const ogLocales: Record<Lang, string> = {
+  en: "en_US",
+  id: "id_ID",
+  zh: "zh_CN",
+  ja: "ja_JP",
+  de: "de_DE",
+  ar: "ar_SA",
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -30,15 +41,40 @@ export async function generateMetadata({
   const { lang: rawLang } = await params
   const lang = rawLang as Lang
   if (!SUPPORTED_LANGS.includes(lang)) return {}
+  const description = descriptions[lang]
+  const url = `${siteUrl}/core/${lang}/privacy-rights`
+  const socialTitle = `${titles[lang]} | ${siteName}`
 
   return {
     title: titles[lang],
-    description: descriptions[lang],
+    description,
     alternates: {
       canonical: `/core/${lang}/privacy-rights`,
       languages: Object.fromEntries(
         SUPPORTED_LANGS.map((l) => [l, `/core/${l}/privacy-rights`])
       ),
+    },
+    openGraph: {
+      title: socialTitle,
+      description,
+      url,
+      locale: ogLocales[lang],
+      siteName,
+      images: [
+        {
+          url: `${siteUrl}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: siteName,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: socialTitle,
+      description,
+      images: [`${siteUrl}/opengraph-image`],
     },
   }
 }
