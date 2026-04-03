@@ -23,19 +23,11 @@ export const rootHtmlClassName = cn(
 
 export function AppShell({
   children,
-  jsonLd,
 }: Readonly<{
   children: React.ReactNode
-  jsonLd?: object
 }>) {
   return (
     <body className="flex min-h-svh flex-col">
-      {jsonLd ? (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      ) : null}
       <ThemeProvider>
         <a
           href="#main-content"

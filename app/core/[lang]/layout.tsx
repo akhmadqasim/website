@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next"
 
 import "../../globals.css"
 import { AppShell, rootHtmlClassName } from "@/components/app-shell"
-import { baseMetadata, profileJsonLd, siteViewport } from "@/lib/site"
+import { baseMetadata, siteViewport } from "@/lib/site"
 
 export const metadata: Metadata = baseMetadata
 export const viewport: Viewport = siteViewport
@@ -19,7 +19,7 @@ export default async function LegalLayout(props: LayoutProps<"/core/[lang]">) {
       suppressHydrationWarning
       className={rootHtmlClassName}
     >
-      <AppShell jsonLd={profileJsonLd}>{children}</AppShell>
+      <AppShell>{children}</AppShell>
     </html>
   )
 }
