@@ -101,9 +101,9 @@ export function SkillsSection() {
   return (
     <>
       <section className="flex min-h-svh flex-col items-center justify-center px-6 text-center">
-        <h2 className="text-4xl font-bold sm:text-5xl lg:text-6xl">
+        <h1 className="text-4xl font-bold sm:text-5xl lg:text-6xl">
           What I Do
-        </h2>
+        </h1>
         <p className="mt-4 text-lg text-muted-foreground">
           Specialized in backend systems and iOS development
         </p>
