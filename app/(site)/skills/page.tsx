@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 
 import { InfraSection } from "@/components/sections/infra"
 import { SkillsSection } from "@/components/sections/skills"
-import { ogImageUrl, siteName, siteUrl } from "@/lib/site"
+import { createBreadcrumbJsonLd, ogImageUrl, siteName, siteUrl } from "@/lib/site"
 
 const title = "Skills"
 const description =
@@ -39,9 +39,18 @@ export const metadata: Metadata = {
   },
 }
 
+const breadcrumbJsonLd = createBreadcrumbJsonLd([
+  { name: "Home", url: siteUrl },
+  { name: "Skills", url },
+])
+
 export default function SkillsPage() {
   return (
     <main className="min-h-svh">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <SkillsSection />
       <InfraSection />
     </main>

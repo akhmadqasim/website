@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 
 import { ProjectsPageContent } from "@/components/projects-page"
-import { ogImageUrl, siteName, siteUrl } from "@/lib/site"
+import { createBreadcrumbJsonLd, ogImageUrl, siteName, siteUrl } from "@/lib/site"
 
 const title = "Projects"
 const description =
@@ -38,6 +38,20 @@ export const metadata: Metadata = {
   },
 }
 
+const breadcrumbJsonLd = createBreadcrumbJsonLd([
+  { name: "Home", url: siteUrl },
+  { name: "Projects", url },
+])
+
 export default function ProjectsPage() {
-  return <ProjectsPageContent />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <ProjectsPageContent />
+    </>
+  )
 }
+
