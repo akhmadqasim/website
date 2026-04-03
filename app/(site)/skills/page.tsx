@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 
-import { SkillsSection } from "@/components/sections/skills"
 import { InfraSection } from "@/components/sections/infra"
+import { SkillsSection } from "@/components/sections/skills"
 
 const title = "Skills"
 const description =

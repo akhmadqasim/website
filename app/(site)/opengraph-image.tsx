@@ -9,7 +9,8 @@ export default async function Image() {
     (
       <div
         style={{
-          background: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)",
+          background:
+            "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -46,7 +47,7 @@ export default async function Image() {
               lineHeight: 1.4,
             }}
           >
-            Backend & iOS Developer
+            Backend &amp; iOS Developer
           </div>
           <div
             style={{
@@ -56,7 +57,7 @@ export default async function Image() {
               marginTop: "16px",
             }}
           >
-            www.akhmadqasim.com
+            akhmadqasim.com
           </div>
         </div>
       </div>
