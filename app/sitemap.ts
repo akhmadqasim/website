@@ -5,7 +5,20 @@ import type { MetadataRoute } from "next"
 
 import { siteUrl } from "@/lib/site"
 
-const SUPPORTED_LANGS = ["en", "id", "zh", "ja", "de", "ar"] as const
+const SUPPORTED_LANGS = [
+  "en",
+  "id",
+  "zh",
+  "ja",
+  "de",
+  "ar",
+  "es",
+  "fr",
+  "it",
+  "ko",
+  "ms",
+  "ru",
+] as const
 const execFileAsync = promisify(execFile)
 
 type SitemapEntryConfig = {

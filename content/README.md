@@ -8,7 +8,7 @@ This directory contains MDX content for legal and informational pages, organized
 content/
 ├── README.md
 └── {project}/
-    ├── {lang}/      # Language-specific content (e.g., en, id, zh, ja, de, ar)
+    ├── {lang}/      # Language-specific content (en, id, zh, ja, de, ar, es, fr, it, ko, ms, ru)
     │   ├── privacy-policy.mdx
     │   └── privacy-rights.mdx
     └── snapshots/   # Archived versions of legal documents

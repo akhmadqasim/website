@@ -3,7 +3,20 @@ import { notFound } from "next/navigation"
 
 import { ogImageUrl, siteName, siteUrl } from "@/lib/site"
 
-const SUPPORTED_LANGS = ["en", "id", "zh", "ja", "de", "ar"] as const
+const SUPPORTED_LANGS = [
+  "en",
+  "id",
+  "zh",
+  "ja",
+  "de",
+  "ar",
+  "es",
+  "fr",
+  "it",
+  "ko",
+  "ms",
+  "ru",
+] as const
 type Lang = (typeof SUPPORTED_LANGS)[number]
 
 const titles: Record<Lang, string> = {
@@ -13,6 +26,12 @@ const titles: Record<Lang, string> = {
   ja: "プライバシーポリシー - SIMSDIG",
   de: "Datenschutzrichtlinie - SIMSDIG",
   ar: "سياسة الخصوصية - SIMSDIG",
+  es: "Política de Privacidad - SIMSDIG",
+  fr: "Politique de confidentialité - SIMSDIG",
+  it: "Informativa sulla Privacy - SIMSDIG",
+  ko: "개인정보처리방침 - SIMSDIG",
+  ms: "Dasar Privasi - SIMSDIG",
+  ru: "Политика конфиденциальности - SIMSDIG",
 }
 
 const descriptions: Record<Lang, string> = {
@@ -22,6 +41,12 @@ const descriptions: Record<Lang, string> = {
   ja: "SIMSDIGがお客様の個人データをどのように収集、使用、保護するかをご確認ください。本プライバシーポリシーは、インドネシアの規制に準拠した学校管理プラットフォームのデータ取り扱い慣行について説明しています。",
   de: "Erfahren Sie, wie SIMSDIG Ihre persönlichen Daten erfasst, verwendet und schützt. Unsere Datenschutzrichtlinie beschreibt die Datenverarbeitungspraktiken der Schulverwaltungsplattform in Übereinstimmung mit indonesischen Vorschriften.",
   ar: "تعرّف على كيفية جمع SIMSDIG لبياناتك الشخصية واستخدامها وحمايتها. تغطي سياسة الخصوصية الخاصة بنا ممارسات معالجة البيانات لمنصة إدارة المدارس وفقًا للوائح الإندونيسية.",
+  es: "Descubra cómo SIMSDIG recopila, utiliza y protege sus datos personales. Nuestra política de privacidad describe las prácticas de tratamiento de datos de la plataforma de gestión escolar conforme a las regulaciones indonesias.",
+  fr: "Découvrez comment SIMSDIG collecte, utilise et protège vos données personnelles. Notre politique de confidentialité présente les pratiques de traitement des données de la plateforme de gestion scolaire, conformément aux réglementations indonésiennes.",
+  it: "Scopra come SIMSDIG raccoglie, utilizza e protegge i Suoi dati personali. La nostra informativa sulla privacy illustra le pratiche di gestione dei dati per la piattaforma di gestione scolastica, in conformità con le normative indonesiane.",
+  ko: "SIMSDIG가 귀하의 개인정보를 어떻게 수집, 이용, 보호하는지 알아보세요. 본 개인정보처리방침은 인도네시아 관련 법령을 준수하는 학교 관리 플랫폼의 데이터 처리 방식을 다룹니다.",
+  ms: "Ketahui cara SIMSDIG mengumpul, menggunakan, dan melindungi data peribadi anda. Dasar privasi kami merangkumi amalan pengendalian data untuk platform pengurusan sekolah selaras dengan peraturan Indonesia.",
+  ru: "Узнайте, как SIMSDIG собирает, использует и защищает ваши персональные данные. Наша политика конфиденциальности описывает практики обработки данных для платформы управления школой в соответствии с индонезийским законодательством.",
 }
 
 const ogLocales: Record<Lang, string> = {
@@ -31,6 +56,12 @@ const ogLocales: Record<Lang, string> = {
   ja: "ja_JP",
   de: "de_DE",
   ar: "ar_SA",
+  es: "es_ES",
+  fr: "fr_FR",
+  it: "it_IT",
+  ko: "ko_KR",
+  ms: "ms_MY",
+  ru: "ru_RU",
 }
 
 export async function generateMetadata({
@@ -101,6 +132,24 @@ const contentMap: Record<
   ar: {
     "privacy-policy": () => import("@/content/core/ar/privacy-policy.mdx"),
   },
+  es: {
+    "privacy-policy": () => import("@/content/core/es/privacy-policy.mdx"),
+  },
+  fr: {
+    "privacy-policy": () => import("@/content/core/fr/privacy-policy.mdx"),
+  },
+  it: {
+    "privacy-policy": () => import("@/content/core/it/privacy-policy.mdx"),
+  },
+  ko: {
+    "privacy-policy": () => import("@/content/core/ko/privacy-policy.mdx"),
+  },
+  ms: {
+    "privacy-policy": () => import("@/content/core/ms/privacy-policy.mdx"),
+  },
+  ru: {
+    "privacy-policy": () => import("@/content/core/ru/privacy-policy.mdx"),
+  },
 }
 
 export function generateStaticParams() {
@@ -126,7 +175,11 @@ export default async function PrivacyPolicyPage({
 
   return (
     <main className="min-h-svh px-6 py-24">
-      <article dir={dir} lang={lang} className="prose prose-neutral dark:prose-invert mx-auto max-w-3xl">
+      <article
+        dir={dir}
+        lang={lang}
+        className="mx-auto prose max-w-3xl prose-neutral dark:prose-invert"
+      >
         <Content />
       </article>
     </main>
