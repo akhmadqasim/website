@@ -56,7 +56,8 @@ export function ProjectsPageContent() {
                   src={project.image}
                   alt={project.name}
                   placeholder="blur"
-                  priority={i === 0}
+                  preload={i === 0}
+                  sizes="(min-width: 1024px) 976px, calc(100vw - 48px)"
                   className="w-full object-cover"
                 />
               </div>

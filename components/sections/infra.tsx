@@ -167,7 +167,14 @@ export function InfraSection() {
                 )}
               >
                 <p className="font-medium">{tool.name}</p>
-                <p className="mt-1 text-sm text-muted-foreground">
+                <p
+                  className={cn(
+                    "mt-1 text-sm",
+                    selected === i
+                      ? "text-foreground/80"
+                      : "text-muted-foreground"
+                  )}
+                >
                   {tool.desc}
                 </p>
               </button>

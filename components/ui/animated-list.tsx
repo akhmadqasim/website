@@ -3,10 +3,16 @@
 import React, {
   useEffect,
   useMemo,
+  useRef,
   useState,
   type ComponentPropsWithoutRef,
 } from "react"
-import { AnimatePresence, motion, type MotionProps } from "motion/react"
+import {
+  AnimatePresence,
+  motion,
+  useInView,
+  type MotionProps,
+} from "motion/react"
 
 import { cn } from "@/lib/utils"
 
@@ -33,6 +39,9 @@ export interface AnimatedListProps extends ComponentPropsWithoutRef<"div"> {
 export const AnimatedList = React.memo(
   ({ children, className, delay = 1000, ...props }: AnimatedListProps) => {
     const [index, setIndex] = useState(0)
+    const ref = useRef<HTMLDivElement>(null)
+    // Only advance while visible, so the list doesn't grow off-screen.
+    const inView = useInView(ref)
     const childrenArray = useMemo(
       () => React.Children.toArray(children),
       [children]
@@ -41,7 +50,7 @@ export const AnimatedList = React.memo(
     useEffect(() => {
       let timeout: ReturnType<typeof setTimeout> | null = null
 
-      if (index < childrenArray.length - 1) {
+      if (inView && index < childrenArray.length - 1) {
         timeout = setTimeout(() => {
           setIndex((prevIndex) => (prevIndex + 1) % childrenArray.length)
         }, delay)
@@ -52,7 +61,7 @@ export const AnimatedList = React.memo(
           clearTimeout(timeout)
         }
       }
-    }, [index, delay, childrenArray.length])
+    }, [inView, index, delay, childrenArray.length])
 
     const itemsToShow = useMemo(() => {
       const result = childrenArray.slice(0, index + 1).reverse()
@@ -61,6 +70,7 @@ export const AnimatedList = React.memo(
 
     return (
       <div
+        ref={ref}
         className={cn(`flex flex-col items-center gap-4`, className)}
         {...props}
       >

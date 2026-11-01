@@ -24,7 +24,7 @@ Personal portfolio + SIMSDIG legal pages. Next.js 16, TypeScript strict, Tailwin
 
 ## Rules
 
-- Conventional Commits: feat:, fix:, chore:, docs:
+- Conventional Commits: feat:, fix:, chore:, docs:; no Co-authored-by or Claude attribution in commits or PRs
 - Use `bun` or `bunx --bun` prefix for all commands
 - Use `@plugin` in globals.css for Tailwind v4 plugins
 - Path-specific rules in `.claude/rules/` (MDX, components, legal pages)
