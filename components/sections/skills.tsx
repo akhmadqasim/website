@@ -11,6 +11,10 @@ import {
 } from "@radix-ui/react-icons"
 import { cn } from "@/lib/utils"
 
+// Fixed date: the page is prerendered, so a "today"-based calendar would
+// differ between build time and the visitor's clock (hydration mismatch).
+const calendarDate = new Date(2026, 2, 24)
+
 const techStack = [
   { name: "TypeScript", body: "Full-stack web and backend development" },
   { name: "Python", body: "Automation, scripting, and data processing" },
@@ -88,11 +92,15 @@ const skills = [
     description: "Native iOS apps with Swift and SwiftUI - from prototyping to App Store.",
     className: "col-span-3 lg:col-span-1",
     background: (
-      <Calendar
-        mode="single"
-        selected={new Date(2026, 2, 24, 0, 0, 0)}
-        className="absolute top-10 right-0 origin-top scale-75 rounded-md border [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] transition-all duration-300 ease-out group-hover:scale-90"
-      />
+      // Decorative: inert keeps its day buttons out of the tab order.
+      <div inert>
+        <Calendar
+          mode="single"
+          selected={calendarDate}
+          defaultMonth={calendarDate}
+          className="absolute top-10 right-0 origin-top scale-75 rounded-md border [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] transition-all duration-300 ease-out group-hover:scale-90"
+        />
+      </div>
     ),
   },
 ]
