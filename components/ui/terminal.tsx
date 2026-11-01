@@ -143,9 +143,6 @@ export const TypingAnimation = ({
 
   const sequence = useSequence()
   const itemIndex = useItemIndex()
-  const hasSequence = sequence !== null
-  const sequenceStarted = sequence?.sequenceStarted ?? false
-  const sequenceActiveIndex = sequence?.activeIndex ?? null
   const sequenceCompleteItemRef = useRef<
     SequenceContextValue["completeItem"] | null
   >(null)
@@ -156,37 +153,25 @@ export const TypingAnimation = ({
     sequenceItemIndexRef.current = itemIndex
   }, [sequence?.completeItem, itemIndex])
 
+  // In a sequence the start is derived: activeIndex only grows, so this stays
+  // true once reached. Standalone typing waits for its own delay timer.
+  const inSequence = sequence !== null && itemIndex !== null
+  const shouldType =
+    sequence && itemIndex !== null
+      ? sequence.sequenceStarted && sequence.activeIndex >= itemIndex
+      : started
+
   useEffect(() => {
-    let startTimeout: ReturnType<typeof setTimeout> | null = null
+    if (inSequence || (startOnView && !isInView)) return
 
-    if (hasSequence && itemIndex !== null) {
-      if (sequenceStarted && !started && sequenceActiveIndex === itemIndex) {
-        setStarted(true)
-      }
-    } else if (!startOnView || isInView) {
-      startTimeout = setTimeout(() => setStarted(true), delay)
-    }
-
-    return () => {
-      if (startTimeout !== null) {
-        clearTimeout(startTimeout)
-      }
-    }
-  }, [
-    delay,
-    startOnView,
-    isInView,
-    started,
-    hasSequence,
-    sequenceActiveIndex,
-    sequenceStarted,
-    itemIndex,
-  ])
+    const startTimeout = setTimeout(() => setStarted(true), delay)
+    return () => clearTimeout(startTimeout)
+  }, [inSequence, delay, startOnView, isInView])
 
   useEffect(() => {
     let typingEffect: ReturnType<typeof setInterval> | null = null
 
-    if (started) {
+    if (shouldType) {
       let i = 0
       typingEffect = setInterval(() => {
         if (i < children.length) {
@@ -210,7 +195,7 @@ export const TypingAnimation = ({
         clearInterval(typingEffect)
       }
     }
-  }, [children, duration, started])
+  }, [children, duration, shouldType])
 
   return (
     <MotionComponent
