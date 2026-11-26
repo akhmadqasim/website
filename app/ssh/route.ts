@@ -1,0 +1,10 @@
+// Windows OpenSSH setup script, served as text for `irm https://akhmadqasim.com/ssh | iex`.
+const script = "# PowerShell (Administrator): irm https://akhmadqasim.com/ssh | iex\n# Pasang OpenSSH Server + key Mac admin, login key-only, port 22 hanya dari subnet admin.\n$ErrorActionPreference = 'Stop'\nif (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole('Administrators')) { throw 'Jalankan PowerShell sebagai Administrator' }\n$key = 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINWaXyJBFKJVIOyrIq26uFEWbuRyfLTj+alH2R1acu5/ MacBook Air'\nif (-not (Get-Service sshd -ErrorAction SilentlyContinue)) {\n  Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0 | Out-Null\n}\nStart-Service sshd; Set-Service sshd -StartupType Automatic\n$c = \"$env:ProgramData\\ssh\\sshd_config\"\n$cfg = Get-Content $c | Where-Object { $_ -notmatch '^\\s*(PasswordAuthentication|PubkeyAuthentication)\\s' }\n@('PasswordAuthentication no', 'PubkeyAuthentication yes') + $cfg | Set-Content $c -Encoding ascii\n$ak = \"$env:ProgramData\\ssh\\administrators_authorized_keys\"\nif (-not ((Test-Path $ak) -and (Get-Content $ak) -contains $key)) { Add-Content $ak $key -Encoding ascii }\nicacls $ak /inheritance:r /grant '*S-1-5-32-544:F' /grant '*S-1-5-18:F' | Out-Null\nNew-ItemProperty -Path HKLM:\\SOFTWARE\\OpenSSH -Name DefaultShell -PropertyType String -Force -Value 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe' | Out-Null\nGet-NetFirewallRule -DisplayName '*OpenSSH*' -ErrorAction SilentlyContinue | Remove-NetFirewallRule\nNew-NetFirewallRule -Name sshd-admin -DisplayName 'OpenSSH (admin subnets)' -Direction Inbound -Protocol TCP -LocalPort 22 -RemoteAddress 10.2.0.0/24,10.3.0.0/24,10.10.0.0/23 -Action Allow -Profile Any | Out-Null\nRestart-Service sshd\n\"OK: ssh $env:USERNAME@$((Get-NetIPAddress -AddressFamily IPv4 | ? IPAddress -like '10.*' | select -First 1).IPAddress)\"\n"
+
+export const dynamic = "force-static"
+
+export function GET() {
+  return new Response(script, {
+    headers: { "content-type": "text/plain; charset=utf-8" },
+  })
+}
